@@ -63,6 +63,24 @@ export default (props) => {
         setAuthenticated(false);
     };
 
+    // const allUsers = () => {
+    //
+    //     const params = {
+    //         UserPoolId: 'STRING_VALUE', /* required */
+    //         AttributesToGet: [
+    //             'STRING_VALUE',
+    //             /* more items */
+    //         ],
+    //         Filter: 'STRING_VALUE',
+    //         Limit: 'NUMBER_VALUE',
+    //         PaginationToken: 'STRING_VALUE'
+    //     };
+    //     cognitoidentityserviceprovider.listUsers(params, function(err, data) {
+    //         if (err) console.log(err, err.stack); // an error occurred
+    //         else     console.log(data);           // successful response
+    //     });
+    // };
+
     return (
         <AccountContext.Provider value={{
             authenticate,
