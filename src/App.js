@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Account from "components/Account";
+import Status from "components/Status";
+import Auth from "components/Auth";
+
+const App = () => {
+
+    return(
+        <Account>
+            <div className="min-vh-100 bg-gradient-light">
+                <div className="container pt-3">
+                    <h1 className="display-4">React Auth App with AWS Cognito</h1>
+                    <hr className=""/>
+                    <Status/>
+                    <Auth/>
+                </div>
+            </div>
+        </Account>
+    );
+};
 
 export default App;

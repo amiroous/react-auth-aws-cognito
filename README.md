@@ -1,1 +1,3 @@
-# React Auth App Using AWS Cognito Service
+# Authenticator App
+> React Authenticator Integrated with AWS Cognito Service
+
