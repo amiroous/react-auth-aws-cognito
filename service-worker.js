@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-auth-aws-cognito/precache-manifest.88d16e7abfddc87d7c6bd7ccc92de657.js"
+  "/react-auth-aws-cognito/precache-manifest.0ea9e1e71799e1265202e09fff1aabe0.js"
 );
 
 self.addEventListener('message', (event) => {

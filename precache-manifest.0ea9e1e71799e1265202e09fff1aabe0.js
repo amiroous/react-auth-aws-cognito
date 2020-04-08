@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c2dfeb43b6d2f835afd1c931ec53ac8c",
+    "revision": "423b62365ab16397efea1313f8d0d6d6",
     "url": "/react-auth-aws-cognito/index.html"
   },
   {
