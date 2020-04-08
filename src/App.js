@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import HomePage from "pages/Home";
 import SecretPage from "pages/Secret";
 import HighAuth from "components/HighAuth";
+import SettingPage from "pages/Settings";
 
 const App = () => {
 
@@ -12,6 +13,7 @@ const App = () => {
             <Route exact path="/" component={HomePage} />
             <HighAuth>
                 <Route exact path="/secret" component={SecretPage} />
+                <Route exact path="/account" component={SettingPage} />
             </HighAuth>
         </div>
     );

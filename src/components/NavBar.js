@@ -14,6 +14,7 @@ const NavBar = () => {
                     <Link className="nav-link" to="/">Home</Link>
                     <HighAuth>
                         <Link className="nav-link" to="/secret">Secret</Link>
+                        <Link className="nav-link" to="/account">My Account</Link>
                     </HighAuth>
                 </Nav>
             </Navbar.Collapse>
