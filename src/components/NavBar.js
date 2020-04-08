@@ -13,7 +13,7 @@ const NavBar = () => {
                 <Nav className="mr-auto">
                     <Link className="nav-link" to="/">Home</Link>
                     <HighAuth>
-                        <Link className="nav-link" to="/users">Users</Link>
+                        <Link className="nav-link" to="/secret">Secret</Link>
                     </HighAuth>
                 </Nav>
             </Navbar.Collapse>
