@@ -13,8 +13,8 @@ const App = () => {
             <Route exact path="/" component={HomePage} />
             <HighAuth>
                 <Route exact path="/secret" component={SecretPage} />
-                <Route exact path="/account" component={SettingPage} />
             </HighAuth>
+            <Route exact path="/account" component={SettingPage} />
         </div>
     );
 };

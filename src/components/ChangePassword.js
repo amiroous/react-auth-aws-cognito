@@ -6,9 +6,12 @@ const ChangePassword = () => {
 
     const [password, setPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
-    const { getSession, authenticate } = useContext(AccountContext);
+    const { authenticated, getSession, authenticate } = useContext(AccountContext);
     const messageRef = useRef();
 
+    if(!authenticated) {
+        return null;
+    }
 
     const changePassword = async(e) => {
         const session = await getSession();
