@@ -4,6 +4,48 @@ import Pool from "components/UserPool";
 
 const AccountContext = createContext();
 
+const getSession = async () => await new Promise((resolve, reject) => {
+    const user = Pool.getCurrentUser();
+
+    if(!user) {
+        return reject();
+    }
+
+    user.getSession(async (error, session) => {
+
+        if(error) {
+            return reject(error);
+        }
+
+        const userAttributes = await getUserAttributes(user);
+
+        resolve({
+            user,
+            ...session,
+            ...userAttributes
+        });
+    });
+});
+
+const getUserAttributes = async (user) => await new Promise((resolve, reject) => {
+
+    user.getUserAttributes((error, userAttributes) => {
+        if(error) {
+            return reject(error);
+        }
+
+        userAttributes = userAttributes.reduce((acc, attr) => {
+            const {Name, Value} = attr;
+            return {
+                ...acc,
+                [Name]: Value,
+            }
+        }, {});
+
+        resolve(userAttributes);
+    });
+});
+
 export default (props) => {
 
     const [authenticated, setAuthenticated] = useState(false);
@@ -15,23 +57,6 @@ export default (props) => {
             } catch (e) { /* Nothing To Handle */ }
         })();
     }, []);
-
-    const getSession = async () => await new Promise((resolve, reject) => {
-        const user = Pool.getCurrentUser();
-
-        if(!user) {
-            return reject();
-        }
-
-        user.getSession((error, session) => {
-
-            if(error) {
-                return reject(error);
-            }
-
-            resolve(session);
-        });
-    });
 
     const authenticate = async (Username, Password) => await new Promise(((resolve, reject) => {
         const user = new CognitoUser({Username, Pool});
@@ -67,7 +92,8 @@ export default (props) => {
         <AccountContext.Provider value={{
             authenticate,
             signOut,
-            authenticated
+            authenticated,
+            getSession
         }}>
             {props.children}
         </AccountContext.Provider>

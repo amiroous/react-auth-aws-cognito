@@ -37,7 +37,7 @@ const SignUp = () => {
                     />
                 </div>
 
-                <button type="submit" className="btn btn-primary">Sign Up</button>
+                <button type="submit" className="btn btn-secondary">Sign Up</button>
             </form>
         </Fragment>
     );

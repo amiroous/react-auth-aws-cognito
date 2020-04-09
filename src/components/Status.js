@@ -11,7 +11,7 @@ const Status = () => {
                 <div>You Are Logged In Successfully</div>
                 <button
                     onClick={signOut}
-                    type="button" className="btn btn-primary">Logout</button>
+                    type="button" className="btn btn-secondary">Logout</button>
             </div>
         )
     } else {

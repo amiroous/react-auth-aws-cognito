@@ -1,23 +1,21 @@
 import React from 'react';
 import 'App.scss';
-
-import Account from "components/Account";
-import Status from "components/Status";
-import Auth from "components/Auth";
+import { Route } from "react-router-dom";
+import HomePage from "pages/Home";
+import SecretPage from "pages/Secret";
+import HighAuth from "components/HighAuth";
+import SettingPage from "pages/Settings";
 
 const App = () => {
 
     return(
-        <Account>
-            <div className="min-vh-100 bg-gradient-light">
-                <div className="container pt-3">
-                    <h1 className="display-4">React Auth App with AWS Cognito</h1>
-                    <hr className=""/>
-                    <Status/>
-                    <Auth/>
-                </div>
-            </div>
-        </Account>
+        <div className="app">
+            <Route exact path="/" component={HomePage} />
+            <HighAuth>
+                <Route exact path="/secret" component={SecretPage} />
+            </HighAuth>
+            <Route exact path="/account" component={SettingPage} />
+        </div>
     );
 };
 
